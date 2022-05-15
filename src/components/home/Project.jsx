@@ -17,7 +17,7 @@ const API = "https://api.github.com";
 // const gitHubQuery = "/repos?sort=updated&direction=desc";
 // const specficQuerry = "https://api.github.com/repos/hashirshoaeb/";
 
-const Project = ({ heading, username, length, specfic }) => {
+const Project = ({ heading, desc, username, length, specfic }) => {
   const allReposAPI = `${API}/users/${username}/repos?sort=updated&direction=desc`;
   const specficReposAPI = `${API}/repos/${username}`;
   const dummyProjectsArr = new Array(length + specfic.length).fill(
@@ -32,7 +32,7 @@ const Project = ({ heading, username, length, specfic }) => {
       // getting all repos
       const response = await axios.get(allReposAPI);
       // slicing to the length
-      repoList = [...response.data.slice(0, length)];
+      repoList = [...response.data.slice(2, length)];
       // adding specified repos
       try {
         for (let repoName of specfic) {
@@ -42,6 +42,8 @@ const Project = ({ heading, username, length, specfic }) => {
       } catch (error) {
         console.error(error.message);
       }
+      console.log(repoList)
+      repoList = repoList.filter(rep => rep.name !== 'Krishiyogi')
       // setting projectArray
       // TODO: remove the duplication.
       setProjectsArray(repoList);
@@ -58,6 +60,7 @@ const Project = ({ heading, username, length, specfic }) => {
     <Jumbotron fluid id="projects" className="bg-light m-0">
       <Container className="">
         <h2 className="display-4 pb-5 text-center">{heading}</h2>
+        <p>{desc}</p>
         <Row>
           {projectsArray.length
             ? projectsArray.map((project, index) => (

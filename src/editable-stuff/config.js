@@ -57,8 +57,9 @@ const about = {
 const repos = {
   show: true,
   heading: "Recent Projects",
+  desc: "I always keeps on working on some personal projects in my free time to update myself. Please find some of my latest sample projects.",
   gitHubUsername: "arjun2010-ece", //i.e."johnDoe12Gh"
-  reposLength: 2,
+  reposLength: 7,
   specificRepos: [],
 };
 
