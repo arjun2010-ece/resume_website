@@ -1,13 +1,13 @@
 {
   "name": "developers-portfolio",
   "description": "A personal static website/portfolio template hosted with GitHub Pages, built to showcase my recent projects.",
-  "homepage": "http://hashirshoaeb.com/home",
+  "homepage": "https://arjun2010-ece.github.io/home",
   "version": "2.0.0",
   "private": true,
   "author": {
-    "name": "Hashir Shoaib",
-    "email": "hashirshoaeb@gmail.com",
-    "url": "https://github.com/hashirshoaeb"
+    "name": "Arjun Sah",
+    "email": "arjun2010.ece@gmail.com",
+    "url": "https://github.com/arjun2010-ece"
   },
   "dependencies": {
     "axios": "^0.19.2",
