@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 // import Pdf from "../../editable-stuff/resume.pdf";
 
