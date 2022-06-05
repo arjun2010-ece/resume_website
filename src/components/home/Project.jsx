@@ -32,7 +32,7 @@ const Project = ({ heading, desc, username, length, specfic }) => {
       // getting all repos
       const response = await axios.get(allReposAPI);
       // slicing to the length
-      repoList = [...response.data.slice(2, length)];
+      repoList = [...response.data.slice(0, length)];
       // adding specified repos
       try {
         for (let repoName of specfic) {
@@ -43,7 +43,9 @@ const Project = ({ heading, desc, username, length, specfic }) => {
         console.error(error.message);
       }
       console.log(repoList)
-      repoList = repoList.filter(rep => rep.name !== 'Krishiyogi')
+      const projectToAvoid = ["resume_website", "Krishiyogi", "monorepo_sample"];
+      // repoList = repoList.filter((rep) => rep.name !== "Krishiyogi");
+      repoList = repoList.filter((rep) => !projectToAvoid.includes(rep.name));
       // setting projectArray
       // TODO: remove the duplication.
       setProjectsArray(repoList);
@@ -60,7 +62,10 @@ const Project = ({ heading, desc, username, length, specfic }) => {
     <Jumbotron fluid id="projects" className="bg-light m-0">
       <Container className="">
         <h2 className="display-4 pb-5 text-center">{heading}</h2>
-        <p>{desc}</p>
+        <p className="mb-5" style={{ fontSize: "1.3rem" }}>
+          {desc}
+        </p>
+        {/* <p style={{ marginBottom: "1.4rem", fontSize: "1.3rem" }}>{desc}</p> */}
         <Row>
           {projectsArray.length
             ? projectsArray.map((project, index) => (
