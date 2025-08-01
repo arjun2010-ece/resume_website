@@ -47,7 +47,7 @@ const about = {
   // imageLink: require("../editable-stuff/hashirshoaeb.png"),
   imageSize: 375,
   message: "My name is Arjun Sah. I’m have done my Masters in Software engineering from University of Porto, Portugal. I'm most passionate about giving back to the community, and my goal is to pursue this passion within the field of software engineering. In my free time I like to continously upgrade myself.",
-  resume: "https://docs.google.com/document/d/1IEJIKlmokNxd2FcXRoB0um_RfJK_haxf4tDVqzRDlDI/edit?usp=sharing",
+  resume: "https://docs.google.com/document/d/1UsTchPccR8bvVjveq7dqubkf_CUzhbUWUe5AN-IezKU/edit?usp=sharing",
 };
 
 // PROJECTS SECTION
